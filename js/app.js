@@ -47,7 +47,6 @@ window.addEventListener('load', function() {
 
             if (!docId) {
                 // Warning if no ID is found
-                // alert("No se encontró información previa. Vuelve a la página anterior.");
                 return;
             }
 
@@ -73,8 +72,6 @@ window.addEventListener('load', function() {
 
     // Animations
     let animatedElements = new Set(); // Para evitar reanimaciones
-
-    gsap.set("[data-fade]", { opacity: 0, y: 20 });
 
     let observer = new IntersectionObserver((entries) => {
         // Filtrar los elementos que están entrando en vista y no han sido animados aún

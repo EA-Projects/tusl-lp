@@ -163,6 +163,11 @@ section{
     position: relative;
 }
 
+[data-fade]{
+    transform: translate(0px, 20px);
+    opacity: 0;
+}
+
 nav{
     width: 100%;
     position: absolute;
