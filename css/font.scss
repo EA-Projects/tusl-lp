@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'Thyga';
+  src: url('../font/Thyga.eot');
+  src: url('../font/Thyga.woff2') format('woff2'),
+    url('../font/Thyga.woff') format('woff'),
+    url('../font/Thyga.ttf') format('truetype'),
+    url('../font/Thyga.svg') format('svg');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Thyga';
+  src: url('../font/ThygaItalic.eot');
+  src: url('../font/ThygaItalic.woff2') format('woff2'),
+    url('../font/ThygaItalic.woff') format('woff'),
+    url('../font/ThygaItalic.ttf') format('truetype'),
+    url('../font/ThygaItalic.svg') format('svg');
+  font-weight: 800;
+  font-style: italic;
+}
