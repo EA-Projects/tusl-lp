@@ -15,6 +15,8 @@ window.addEventListener('load', function() {
     if ($('#waitlist-form').length) {
         document.getElementById("waitlist-form").addEventListener("submit", async function (e) {
             e.preventDefault();
+            $('#waitlist-form').addClass('readonly');
+            $('#waitlist-form input.button').val("Sending");
 
             const email = document.getElementById("email").value;
             const platform = document.querySelector('input[name="platform"]:checked').value;
@@ -32,6 +34,8 @@ window.addEventListener('load', function() {
                 // Redirect to success page
                 window.location.href = "/success.html";
             } catch (error) {
+                $('#waitlist-form').removeClass('readonly');
+                $('#waitlist-form input.button').val("Join Waitlist");
                 console.error("Error registering in Firestore:", error);
             }
         });
@@ -41,6 +45,8 @@ window.addEventListener('load', function() {
     if ($('#referral-form').length) {
         document.getElementById("referral-form").addEventListener("submit", async function (e) {
             e.preventDefault();
+            $('#referral-form').addClass('readonly');
+            $('#referral-form input.button').val("Sending");
 
             // Obtener el ID guardado
             const docId = localStorage.getItem('waitlistDocId');
@@ -64,6 +70,8 @@ window.addEventListener('load', function() {
                 // You can show a success message or redirect the user
                 $('.success-form').fadeIn();
             } catch (error) {
+                $('#referral-form').removeClass('readonly');
+                $('#referral-form input.button').val("Submit");
                 console.error("Error saving referrals:", error);
             }
         });

@@ -9234,6 +9234,7 @@ nav.is-transparent {
     height: 400px;
   }
   #hero .inner-hero-graphic img {
+    width: 100%;
     max-width: 500px;
   }
 }
@@ -9526,7 +9527,21 @@ nav.is-transparent {
   gap: 20px;
   margin: 20px 0;
 }
-#waitlist .inner-middle form input {
+#waitlist .inner-middle form .input-row label {
+  font-size: 18px;
+  color: #52F9F9;
+  line-height: 120%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  gap: 5px;
+  cursor: pointer;
+}
+#waitlist .inner-middle form .input-row label input {
+  height: 25px;
+  width: 25px;
+}
+#waitlist .inner-middle form input:not(.button) {
   width: 100%;
   border-radius: 8px;
   padding: 10px 20px;
@@ -9538,34 +9553,24 @@ nav.is-transparent {
           box-shadow: none;
   font-size: 18px;
 }
-#waitlist .inner-middle form input::-webkit-input-placeholder {
+#waitlist .inner-middle form input:not(.button)::-webkit-input-placeholder {
   color: #FFFFFF;
 }
-#waitlist .inner-middle form input::-moz-placeholder {
+#waitlist .inner-middle form input:not(.button)::-moz-placeholder {
   color: #FFFFFF;
 }
-#waitlist .inner-middle form input:-ms-input-placeholder {
+#waitlist .inner-middle form input:not(.button):-ms-input-placeholder {
   color: #FFFFFF;
 }
-#waitlist .inner-middle form input::-ms-input-placeholder {
+#waitlist .inner-middle form input:not(.button)::-ms-input-placeholder {
   color: #FFFFFF;
 }
-#waitlist .inner-middle form input::placeholder {
+#waitlist .inner-middle form input:not(.button)::placeholder {
   color: #FFFFFF;
 }
-#waitlist .inner-middle form label {
-  font-size: 18px;
-  color: #52F9F9;
-  line-height: 120%;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  gap: 5px;
-  cursor: pointer;
-}
-#waitlist .inner-middle form label input {
-  height: 25px;
-  width: 25px;
+#waitlist .inner-middle form.readonly > * {
+  opacity: 0.3;
+  pointer-events: none;
 }
 #waitlist .inner-middle .success-form {
   display: none;

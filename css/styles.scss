@@ -323,6 +323,7 @@ nav{
                 height: 400px; 
             }
             img{
+                width: 100%;
                 max-width: 500px;
             }
         }
@@ -587,8 +588,20 @@ nav{
                 justify-content: center;
                 gap: 20px;
                 margin: 20px 0;
+                label{
+                    font-size: 18px;
+                    color: $light-grey;
+                    line-height: 120%;
+                    display: inline-flex;
+                    gap: 5px;
+                    cursor: pointer;
+                    input{
+                        height: 25px;
+                        width: 25px;
+                    }
+                }
             }
-            input{
+            input:not(.button){
                 width: 100%;
                 border-radius: 8px;
                 padding: 10px 20px;
@@ -602,16 +615,10 @@ nav{
                     color: $white;
                 }
             }
-            label{
-                font-size: 18px;
-                color: $light-grey;
-                line-height: 120%;
-                display: inline-flex;
-                gap: 5px;
-                cursor: pointer;
-                input{
-                    height: 25px;
-                    width: 25px;
+            &.readonly{
+                > *{
+                    opacity: .3;
+                    pointer-events: none;
                 }
             }
         }
