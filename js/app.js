@@ -77,6 +77,16 @@ window.addEventListener('load', function() {
         });
     }
 
+    // Fix navbar when scroll
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+        if (scroll >= 1) {
+            $('nav').addClass('scrolled');
+        } 
+        else {
+            $('nav').removeClass('scrolled');
+        }
+    });
 
     // Animations
     let animatedElements = new Set(); // Para evitar reanimaciones

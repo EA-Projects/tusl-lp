@@ -177,7 +177,8 @@ nav{
     padding: 25px 0;
     background-color: rgba(1, 0, 35, 0.6);
     backdrop-filter: blur(4px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all .4s ease-in-out;
     z-index: 9;
     .inner-navigation{
         display: flex;
@@ -185,11 +186,26 @@ nav{
         align-items: center;
         img{
             max-width: 198px;
+            transition: all .4s ease-in-out;
         }
     }
     &.is-transparent{
         background-color: transparent;
         border-bottom: none;
+    }
+    &.scrolled{
+        background-color: rgba(1, 0, 35, 0.8);
+        padding: 15px 0;
+        position: fixed;
+        .inner-navigation{
+            img{
+                max-width: 150px;
+            }
+            .button{
+                font-size: 14px;
+                padding: 8px 20px 6px;
+            }
+        }
     }
     @media(max-width: 575px){
         padding: 15px 0;
@@ -200,6 +216,13 @@ nav{
             .button{
                 font-size: 14px;
                 padding: 8px 20px 6px;
+            }
+        }
+        &.scrolled{
+            .inner-navigation{
+                img{
+                    max-width: 120px;
+                }
             }
         }
     }
@@ -397,9 +420,9 @@ nav{
             z-index: 1;
         }
         img{
-            max-width: 125px;
+            max-width: 96px;
             position: absolute;
-            bottom: -75px;
+            bottom: -55px;
             margin: 0 auto;
             left: 0;
             right: 0;
@@ -445,8 +468,8 @@ nav{
                 min-height: auto;
             }
             img{
-                max-width: 85px;
-                bottom: -50px;
+                max-width: 75px;
+                bottom: -45px;
             }
         }
     }

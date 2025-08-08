@@ -9066,7 +9066,9 @@ nav {
   padding: 25px 0;
   background-color: rgba(1, 0, 35, 0.6);
   backdrop-filter: blur(4px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
   z-index: 9;
 }
 nav .inner-navigation {
@@ -9082,10 +9084,24 @@ nav .inner-navigation {
 }
 nav .inner-navigation img {
   max-width: 198px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 nav.is-transparent {
   background-color: transparent;
   border-bottom: none;
+}
+nav.scrolled {
+  background-color: rgba(1, 0, 35, 0.8);
+  padding: 15px 0;
+  position: fixed;
+}
+nav.scrolled .inner-navigation img {
+  max-width: 150px;
+}
+nav.scrolled .inner-navigation .button {
+  font-size: 14px;
+  padding: 8px 20px 6px;
 }
 @media (max-width: 575px) {
   nav {
@@ -9097,6 +9113,9 @@ nav.is-transparent {
   nav .inner-navigation .button {
     font-size: 14px;
     padding: 8px 20px 6px;
+  }
+  nav.scrolled .inner-navigation img {
+    max-width: 120px;
   }
 }
 
@@ -9303,9 +9322,9 @@ nav.is-transparent {
   z-index: 1;
 }
 #how-works .inner-card img {
-  max-width: 125px;
+  max-width: 96px;
   position: absolute;
-  bottom: -75px;
+  bottom: -55px;
   margin: 0 auto;
   left: 0;
   right: 0;
@@ -9354,8 +9373,8 @@ nav.is-transparent {
     min-height: auto;
   }
   #how-works .inner-card img {
-    max-width: 85px;
-    bottom: -50px;
+    max-width: 75px;
+    bottom: -45px;
   }
 }
 @media (max-width: 425px) {
