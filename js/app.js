@@ -56,13 +56,21 @@ window.addEventListener('load', function() {
                 return;
             }
 
-            // Get referred emails (filter out empty ones)
+            // Get all referral inputs, normalize them to lowercase, and filter out empty values
             const referrals = Array.from(document.querySelectorAll(".referral-input"))
-                .map(input => input.value.trim())
+                .map(input => input.value.trim().toLowerCase()) // Normaliza en minúsculas
                 .filter(email => email.length > 0);
 
+            // Validate if there are duplicate emails
+            const uniqueEmails = new Set(referrals);
+            if (uniqueEmails.size !== referrals.length) {
+                $('.alert-message').fadeIn();
+                $('#referral-form').removeClass('readonly');
+                $('#referral-form input.button').val("Submit");
+                return;
+            }
+
             try {
-                // Update the existing document with the referrals
                 await db.collection("waitlist").doc(docId).update({
                     referrals: referrals
                 });
